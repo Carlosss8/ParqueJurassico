@@ -2,6 +2,21 @@
 #include <cstring>
 #include <string>
 
+Cercados::Cercados(std::string Especie, int ID, int NumeroCercado, bool Estado, std::string NombreCercado){
+    strcpy(_especie, Especie);
+    _id=ID;
+    _numeroCercado=NumeroCercado;
+    _estado=Estado;
+    strcpy(_nombreCercado, NombreCercado);
+}
+Cercados::Cercados(){
+    strcpy(_especie, " ");
+    _id=0000;
+    _numeroCercado=0;
+    _estado=false;
+    strcpy(_nombreCercado, " ");
+}
+
 void Cercados::setEspecie(std::string Especie){
     strcpy(_especie, Especie.c_str());
 }
@@ -19,7 +34,8 @@ void Cercados::setNombreCercado(std::string NombreCercado){
 }
 
 std::string Cercados::getEspecie(){
-    return _especie;
+string AuxEspecie=_especie;
+    return AuxEspecie;
 }
 int Cercados::getID(){
     return _id;
@@ -31,7 +47,8 @@ bool Cercados::getEstado(){
     return _estado;
 }
 std::string Cercados::getNombreCercado(){
-    strcpy(_nombreCercado, NombreCercado.c_str());
+string AuxNombreCercado=_nombreCercado;
+    return AuxNombreCercado;
 }
 void Cercados::Cargar(){
 Cercados Objcercados;
@@ -50,4 +67,12 @@ cout << "El cercado esta activo? (S O N): " ;
 std::getline(cin,op);
 if (op=="S"){Objcercados.setEstado(true);}
 else{Objcercados.setEstado(false);}
+}
+
+void Cercados::Mostrar(){
+cout << "-------------------------------" << endl ;
+cout << "Especie: " << _especie << endl ;
+cout << "ID: " << _id << endl ;
+cout << "Numero del cercado: " << _numeroCercado << endl ;
+cout << "Nombre del cercado: " << _nombreCercado << endl ;
 }

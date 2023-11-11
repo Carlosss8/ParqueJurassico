@@ -2,7 +2,27 @@
 #include <cstring>
 #include <string>
 
-/// PONER LOS CONSTRUCTORES
+Dinosaurios::Dinosaurios(int ID, std::string Nombre, std::string Especie, int Edad, std::string TipoADN, Fecha FechaDeIncubacion, int NumeroCercado, bool Estado){
+    _id=ID;
+    strcpy(_nombre, Nombre.c_str());
+    strcpy(_observaciones, Observaciones.c_str());
+    _edad=Edad;
+    strcpy(_tipoADN, TipoADN.c_str());
+    _fechaIncubacion=
+    _numeroCercado=NumeroCercado;
+    _estado=Estado;
+}
+
+Dinosaurios::Dinosaurios(){
+    _id=0000;
+    strcpy(_nombre, " ");
+    strcpy(_especie, " ");
+    _edad=0;
+    strcpy(_tipoADN, " ");
+    _fechaIncubacion=
+    _numeroCercado=0;
+    _estado=false;
+}
 
 void Dinosaurios::setID(int ID){
     _id=ID;
@@ -35,16 +55,19 @@ int Dinosaurios::getID(){
     return _id;
 }
 std::string Dinosaurios::getNombre(){
-    return _nombre;
+string AuxNombre=_nombre;
+    return AuxNombre;
 }
 std::string Dinosaurios::getEspecie(){
-    return _especie;
+string AuxEspecie=_especie;
+    return AuxEspecie;
 }
 int Dinosaurios::getEdad(){
     return _edad;
 }
 std::string Dinosaurios::getTipoADN(){
-    return _tipoADN;
+string AuxTipoADN=_tipoADN;
+    return AuxTipoADN;
 }
 Fecha Dinosaurios::getFechaIncubacion(){
     return _fechaIncubacion;
@@ -69,14 +92,29 @@ cout << "Especie(tipo): " ;
 std::getline(cin,_especie);
 cout << "Edad: " ;
 cin >> _edad;
-cout << "Fecha de Incubacion: ";
+cout << "Fecha de Incubacion: " << endl;
+cout << "Dia: " ;
 cin >> dia;
+cout << "Mes: " ;
 cin >> mes;
+cout << "Anio: " ;
 cin >> anio;
-///PONER LOS SET DE FECHA
+_fechaIncubacion.setDia(dia);
+_fechaIncubacion.setMes(mes);
+_fechaIncubacion.setAnio(anio);
 cout << "Numero de cercado en el que habita: " ;
 cin >> _numeroCercado;
 dino.setEstado(true);
+}
+
+void Dinosaurios::Mostrar(){
+cout << "-------------------------------" << endl ;
+cout <<"ID: "<< _id<< endl ;
+cout <<"Nombre: " << _nombre << endl ;
+cout <<"Tipo: "<< _especie << endl ;
+cout <<"Edad: " << _edad << endl ;
+cout <<"Fecha de Incubacion: "<< _fechaIncubacion().toString() << endl ;
+cout << "Numero de cercado en el que habita: " << _numeroCercado << endl;
 }
 
 

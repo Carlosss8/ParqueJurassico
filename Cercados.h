@@ -11,6 +11,10 @@ private:
     char _nombreCercado[50];
 
 public:
+
+    Cercados(std::string Especie, int ID, int NumeroCercado, bool Estado, std::string NombreCercado);
+    Cercados();
+
     void setEspecie(std::string Especie);
     void setID(int ID);
     void setNumeroCercado(int NumeroCercado);
@@ -24,6 +28,8 @@ public:
     std::string getNombreCercado();
 
     void Cargar();
+    void Mostrar();
+
 
 };
 

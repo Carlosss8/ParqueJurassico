@@ -1,9 +1,9 @@
 #ifndef DINOSAURIOS_H
 #define DINOSAURIOS_H
-
+#include "Fecha.h"
 
 class Dinosaurios{
-private:
+protected:
     int _id;
     char _nombre[50];
     char _especie[30];
@@ -14,6 +14,11 @@ private:
     bool _estado;
 
 public:
+
+    Dinosaurios(int ID, std::string Nombre, std::string Especie, int Edad, std::string TipoADN, Fecha FechaDeIncubacion,
+                int NumeroCercado, bool Estado);
+
+    Dinosaurios();
 
     void setID(int ID);
     void setNombre(std::string Nombre);
@@ -34,6 +39,7 @@ public:
     bool getEstado();
 
     void Cargar();
+    void Mostrar();
 
 };
 
