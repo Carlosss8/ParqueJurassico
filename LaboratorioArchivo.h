@@ -14,6 +14,8 @@ public:
     int ContarRegistros();
     Laboratorio Leer(int nroRegistro);
     int Buscar(int IDLaboratorio);
+    int BuscarPorADN(std::string ADN);
+
 };
 
 #endif // LABORATORIOARCHIVO_H

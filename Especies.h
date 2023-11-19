@@ -1,6 +1,6 @@
 #ifndef ESPECIES_H
 #define ESPECIES_H
-
+#include <string>
 
 class Especies{
 private:

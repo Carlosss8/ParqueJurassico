@@ -1,7 +1,8 @@
 #include "Laboratorio.h"
 #include <string>
 #include <cstring>
-
+#include <iostream>
+using namespace std;
 Laboratorio::Laboratorio(int ID, std::string ADN, std::string Fosil, Fecha FechaDeEncuentro, int Edad, std::string Periodo){
     _id=ID;
     strcpy(_adn, ADN.c_str());
@@ -41,7 +42,7 @@ void Laboratorio::setEdad(int Edad){
 }
 
 void Laboratorio::setPeriodo(std::string Periodo){
-    _periodo=Periodo;
+    strcpy(_periodo, Periodo.c_str());
 }
 
 int Laboratorio::getID(){
@@ -78,9 +79,9 @@ cout << ">>>>>>>>>>>INGRESAR<<<<<<<<<<<<" << endl ;
 cout << "ID: " ;
 cin >> _id;
 cout << "ADN: " ;
-std::getline(cin,_adn);
+cin >> _adn;
 cout << "Fosil: " ;
-std::getline(cin,_fosil);
+cin>> _fosil;
 cout << "Fecha encontrado del fosil: " ;
 cout << "Dia: " ;
 cin >> dia ;
@@ -94,7 +95,7 @@ _fechaDeEncuentro.setAnio(anio);
 cout << "Edad: " ;
 cin >> _edad;
 cout << "Periodo: " ;
-std::getline(cin,_especie);
+cin >>_periodo;
 }
 
 void Laboratorio::Mostrar(){
@@ -102,7 +103,7 @@ cout << "-------------------------------" << endl ;
 cout <<"ID: " << _id<< endl ;
 cout <<"ADN: " << _adn<< endl ;
 cout <<"Fosil: " << _fosil<< endl ;
-cout <<"Fecha encontrado: " << _fechaDeEncuentro().toString()<< endl ;
+cout <<"Fecha encontrado: " << _fechaDeEncuentro.toString()<< endl ;
 cout <<"Edad: " << _edad<< endl ;
 cout <<"Periodo: " << _periodo<< endl ;
 }

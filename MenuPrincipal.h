@@ -2,15 +2,13 @@
 #define MENUPRINCIPAL_H
 
 
-class MenuPrincipal
-{
-    public:
-        MenuPrincipal();
-        virtual ~MenuPrincipal();
+class MenuPrincipal{
+private:
 
-    protected:
+public:
+    void Menu();
+    void ReturnMenuPrincipal();
 
-    private:
 };
 
 #endif // MENUPRINCIPAL_H

@@ -1,7 +1,7 @@
 #include "OperacionesArchivo.h"
 #include <cstdio>
 
-DinosauriosArchivo::DinosauriosArchivo(std::string nombreArchivo){
+OperacionesArchivo::OperacionesArchivo(std::string nombreArchivo){
   _nombreArchivo = nombreArchivo;
 }
 

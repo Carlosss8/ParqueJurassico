@@ -61,6 +61,7 @@ int DinosauriosArchivo::Buscar(int IDDinosaurios){
   Dinosaurios reg;
   while(fread(&reg, sizeof(Dinosaurios), 1, p)){
     if(reg.getID() == IDDinosaurios){
+    reg.Mostrar();
       fclose(p);
       return i;
     }
@@ -69,3 +70,83 @@ int DinosauriosArchivo::Buscar(int IDDinosaurios){
   fclose(p);
   return -1;
 }
+
+int DinosauriosArchivo::BuscarPorNombre(std::string NombreDinosaurio){
+ FILE *p = fopen(_nombreArchivo.c_str(), "rb");
+  if (p == nullptr){
+    return -1;
+  }
+  int i = 0;
+  Dinosaurios reg;
+  while(fread(&reg, sizeof(Dinosaurios), 1, p)){
+    if(reg.getNombre() == NombreDinosaurio){
+    reg.Mostrar();
+      fclose(p);
+      return i;
+    }
+    i++;
+  }
+  fclose(p);
+  return -1;
+}
+
+int DinosauriosArchivo::BuscarPorTipo(std::string TipoDinosaurio){
+ FILE *p = fopen(_nombreArchivo.c_str(), "rb");
+  if (p == nullptr){
+    return -1;
+  }
+  Dinosaurios reg;
+  DinosauriosArchivo arch("Dinosaurios.dat");
+
+  int cont=arch.ContarRegistros();
+
+  for (int x=0;x<cont;x++){
+    reg=arch.Leer(x);
+    if (reg.getEspecie()==TipoDinosaurio){
+        reg.Mostrar();
+    }
+  }
+  fclose(p);
+}
+
+int DinosauriosArchivo::BuscarPorNumeroDeCercado(int NumeroCercado){
+ FILE *p = fopen(_nombreArchivo.c_str(), "rb");
+  if (p == nullptr){
+    return -1;
+  }
+  Dinosaurios reg;
+  DinosauriosArchivo arch("Dinosaurios.dat");
+
+  int cont=arch.ContarRegistros();
+
+  for (int x=0;x<cont;x++){
+    reg=arch.Leer(x);
+    if (reg.getNumeroCercado()==NumeroCercado){
+        reg.Mostrar();
+    }
+  }
+  fclose(p);
+}
+
+int DinosauriosArchivo::BuscarPorADN(std::string ADN){
+ FILE *p = fopen(_nombreArchivo.c_str(), "rb");
+  if (p == nullptr){
+    return -1;
+  }
+  Dinosaurios reg;
+  DinosauriosArchivo arch("Dinosaurios.dat");
+
+  int cont=arch.ContarRegistros();
+
+  for (int x=0;x<cont;x++){
+    reg=arch.Leer(x);
+    if (reg.getTipoADN()==ADN){
+        reg.Mostrar();
+    }
+  }
+  fclose(p);
+}
+
+
+
+

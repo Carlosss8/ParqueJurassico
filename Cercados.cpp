@@ -1,13 +1,16 @@
 #include "Cercados.h"
 #include <cstring>
 #include <string>
+#include <iostream>
+
+using namespace std;
 
 Cercados::Cercados(std::string Especie, int ID, int NumeroCercado, bool Estado, std::string NombreCercado){
-    strcpy(_especie, Especie);
+    strcpy(_especie, Especie.c_str());
     _id=ID;
     _numeroCercado=NumeroCercado;
     _estado=Estado;
-    strcpy(_nombreCercado, NombreCercado);
+    strcpy(_nombreCercado, NombreCercado.c_str());
 }
 Cercados::Cercados(){
     strcpy(_especie, " ");
@@ -56,15 +59,15 @@ string op;
 cout << "-------------------------------" << endl ;
 cout << ">>>>>>>>>>>INGRESAR<<<<<<<<<<<<" << endl ;
 cout << "Especie: ";
-std::getline(cin,_especie);
+cin >> _especie;
 cout << "ID: " ;
 cin >> _id;
 cout << "Numero del cercado: " ;
 cin >> _numeroCercado;
-cout << "Nombre del cercado: " :
-std::getline(cin,_nombreCercado);
+cout << "Nombre del cercado: " ;
+cin >> _nombreCercado;
 cout << "El cercado esta activo? (S O N): " ;
-std::getline(cin,op);
+cin >> op;
 if (op=="S"){Objcercados.setEstado(true);}
 else{Objcercados.setEstado(false);}
 }

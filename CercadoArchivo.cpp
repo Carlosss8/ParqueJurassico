@@ -1,7 +1,7 @@
 #include "CercadoArchivo.h"
 #include <cstdio>
 
-DinosauriosArchivo::DinosauriosArchivo(std::string nombreArchivo){
+CercadoArchivo::CercadoArchivo(std::string nombreArchivo){
   _nombreArchivo = nombreArchivo;
 }
 
@@ -67,4 +67,42 @@ int CercadoArchivo::Buscar(int IDCercados){
   }
   fclose(p);
   return -1;
+}
+
+int CercadoArchivo::BuscarPorTipoEspecie(std::string TipoEspecie){
+ FILE *p = fopen(_nombreArchivo.c_str(), "rb");
+  if (p == nullptr){
+    return -1;
+  }
+  Cercados reg;
+  CercadoArchivo arch("Cercados.dat");
+
+  int cont=arch.ContarRegistros();
+
+  for (int x=0;x<cont;x++){
+    reg=arch.Leer(x);
+    if (reg.getEspecie()==TipoEspecie){
+        reg.Mostrar();
+    }
+  }
+  fclose(p);
+}
+
+int CercadoArchivo::BuscarPorNumeroDeCercado(int NumeroCercado){
+ FILE *p = fopen(_nombreArchivo.c_str(), "rb");
+  if (p == nullptr){
+    return -1;
+  }
+  Cercados reg;
+  CercadoArchivo arch("Cercados.dat");
+
+  int cont=arch.ContarRegistros();
+
+  for (int x=0;x<cont;x++){
+    reg=arch.Leer(x);
+    if (reg.getNumeroCercado()==NumeroCercado){
+        reg.Mostrar();
+    }
+  }
+  fclose(p);
 }

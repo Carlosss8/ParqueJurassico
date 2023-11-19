@@ -73,3 +73,22 @@ int LaboratorioArchivo::Buscar(int IDLaboratorio){
   fclose(p);
   return -1;
 }
+
+int LaboratorioArchivo::BuscarADN(std::string ADN){
+ FILE *p = fopen(_nombreArchivo.c_str(), "rb");
+  if (p == nullptr){
+    return -1;
+  }
+  Laboratorio reg;
+  LaboratorioArchivo arch("Laboratorio.dat");
+
+  int cont=arch.ContarRegistros();
+
+  for (int x=0;x<cont;x++){
+    reg=arch.Leer(x);
+    if (reg.getADN()==ADN){
+        reg.Mostrar();
+    }
+  }
+  fclose(p);
+}

@@ -1,7 +1,7 @@
 #ifndef CRIARHIBRIDOARCHIVO_H
 #define CRIARHIBRIDOARCHIVO_H
-
-
+#include <string>
+#include "CriarHibrido.h"
 class CriarHibridoArchivo{
 private:
     std::string _nombreArchivo;

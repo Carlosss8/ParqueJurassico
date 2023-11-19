@@ -1,7 +1,8 @@
 #include "Especies.h"
 #include <string>
 #include <cstring>
-
+#include <iostream>
+using namespace std;
 Especies::Especies(std::string Periodo, std::string Tipo, int Cantidad, bool Estado){
     strcpy(_periodo, Periodo.c_str());
     strcpy(_tipo, Tipo.c_str());
@@ -16,10 +17,10 @@ Especies::Especies(){
 }
 
 void Especies::setPeriodo(std::string Periodo){
-    _periodo=Periodo;
+    strcpy(_periodo, Periodo.c_str());
 }
 void Especies::setTipo(std::string Tipo){
-    _tipo=Tipo;
+    strcpy(_tipo, Tipo.c_str());
 }
 void Especies::setCantidad(int Cantidad){
     _cantidad=Cantidad;

@@ -1,11 +1,11 @@
-#include "EspeciesArchivo.h"
+#include "EspecieArchivo.h"
 #include <cstdio>
 
-EspeciesArchivo::EspeciesArchivo(std::string nombreArchivo){
+EspecieArchivo::EspecieArchivo(std::string nombreArchivo){
   _nombreArchivo = nombreArchivo;
 }
 
-bool EspeciesArchivo::Guardar(Especies reg){
+bool EspecieArchivo::Guardar(Especies reg){
   bool pudoEscribir;
   FILE *p = fopen(_nombreArchivo.c_str(), "ab");
   if (p == nullptr){
@@ -16,7 +16,7 @@ bool EspeciesArchivo::Guardar(Especies reg){
   return pudoEscribir;
 }
 
-bool EspeciesArchivo::Guardar(Especies reg, int nroRegistro){
+bool EspecieArchivo::Guardar(Especies reg, int nroRegistro){
   bool pudoEscribir;
   FILE *p = fopen(_nombreArchivo.c_str(), "rb+");
   if (p == nullptr){
@@ -28,7 +28,7 @@ bool EspeciesArchivo::Guardar(Especies reg, int nroRegistro){
   return pudoEscribir;
 }
 
-int EspeciesArchivo::ContarRegistros(){
+int EspecieArchivo::ContarRegistros(){
   FILE *p = fopen(_nombreArchivo.c_str(), "rb");
   if (p == nullptr){
     return 0;
@@ -39,7 +39,7 @@ int EspeciesArchivo::ContarRegistros(){
   return bytes / sizeof(Especies);
 }
 
-Especies EspeciesArchivo::Leer(int nroRegistro){
+Especies EspecieArchivo::Leer(int nroRegistro){
   Especies reg;
   FILE *p = fopen(_nombreArchivo.c_str(), "rb");
   if (p == nullptr){

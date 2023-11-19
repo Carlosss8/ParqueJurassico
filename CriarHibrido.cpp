@@ -1,5 +1,6 @@
 #include "CriarHibrido.h"
-
+#include <iostream>
+using namespace std ;
 void CriarHibrido::setDinosaurio(Dinosaurios Dino){
     _dinosaurio=Dino;
 }

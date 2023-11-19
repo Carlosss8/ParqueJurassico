@@ -1,6 +1,6 @@
 #ifndef CERCADOS_H
 #define CERCADOS_H
-
+#include <string>
 
 class Cercados{
 private:

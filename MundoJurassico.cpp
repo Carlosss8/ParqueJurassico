@@ -1,13 +1,14 @@
 #include "MundoJurassico.h"
 #include <string>
 #include <cstring>
-
+#include <iostream>
+using namespace std ;
 
 MundoJurassico::MundoJurassico(int IDInforme, int CantDePublico, float Presupuesto, Fecha FechaDeInforme, int Accidentes, std::string Observaciones){
     _idInforme=IDInforme;
     _cantDePublico=CantDePublico;
     _presupuesto=Presupuesto;
-    _fechaDeInforme=
+    _fechaDeInforme= FechaDeInforme;
     _accidentes=Accidentes;
     strcpy(_observaciones, Observaciones.c_str());
 }
@@ -15,7 +16,7 @@ MundoJurassico::MundoJurassico(){
     _idInforme=0000;
     _cantDePublico=00;
     _presupuesto=0.0;
-    _fechaDeInforme=
+    _fechaDeInforme= Fecha();
     _accidentes=0;
     strcpy(_observaciones, " ");
 }
@@ -78,14 +79,15 @@ _fechaDeInforme.setMes(mes);
 _fechaDeInforme.setAnio(anio);
 cout << "Accidentes: " ;
 cin >> _accidentes;
+cin.ignore();
 cout << "Observaciones: " ;
-cin >> _observaciones;
+cin.getline(_observaciones, 100);
 }
 
 void MundoJurassico::Mostrar(){
 cout << "-------------------------------" << endl ;
 cout <<"ID: " << _idInforme<< endl ;
-cout <<"Fecha del informe: " << _fechaDeInforme<< endl ;
+cout <<"Fecha del informe: " << _fechaDeInforme.toString()<< endl ;
 cout <<"Accidentes: " << _accidentes<< endl ;
 cout <<"Observaciones: " << _observaciones<< endl ;
 }

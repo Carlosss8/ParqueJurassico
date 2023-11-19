@@ -1,6 +1,6 @@
 #ifndef OPERACIONES_H
 #define OPERACIONES_H
-
+#include <string>
 
 class Operaciones{
 private:

@@ -14,6 +14,14 @@ public:
     int ContarRegistros();
     Dinosaurios Leer(int nroRegistro);
     int Buscar(int IDDinosaurios);
+    int BuscarPorNombre(std::string NombreDinosaurio);
+    int BuscarPorTipo(std::string TipoDinosaurio);
+    int BuscarPorNumeroDeCercado(int NumeroCercado);
+    int BuscarPorADN(std::string ADN); //PROBAR
+
+
+
+
 };
 
 #endif // DINOSAURIOSARCHIVO_H

@@ -1,7 +1,8 @@
 #include "Operaciones.h"
 #include <string>
 #include <cstring>
-
+#include <iostream>
+using namespace std;
 
 Operaciones::Operaciones(int ID, bool Control, std::string Vehiculos, std::string Dron, std::string Electricidad, std::string Actividad){
 _id=ID;
@@ -9,15 +10,15 @@ _control=Control;
 strcpy(_vehiculos, Vehiculos.c_str());
 strcpy(_dron, Dron.c_str());
 strcpy(_electricidad, Electricidad.c_str());
-strcpy(_observaciones, Observaciones.c_str());
+strcpy(_actividad, Actividad.c_str());
 }
 Operaciones::Operaciones(){
 _id=0000;
 _control=false;
 strcpy(_vehiculos," ");
-strcpy(_dron," "");
+strcpy(_dron," ");
 strcpy(_electricidad," ");
-strcpy(_observaciones," ");
+strcpy(_actividad," ");
 }
 
 void Operaciones::setControl(bool Control){
@@ -70,9 +71,9 @@ cout << ">>>>>>>>>>>INGRESAR<<<<<<<<<<<<" << endl ;
 cout << "ID: " ;
 cin >> _id;
 cout << "Nombre del Vehiculo: ";
-std::getline(cin,_vehiculos);
+cin >> _vehiculos;
 cout << "Su actividad: " ;
-std::getline(cin,_actividad);
+cin >> _actividad;
 }
 
 void Operaciones::CargarDron(){
@@ -81,9 +82,9 @@ cout << ">>>>>>>>>>>INGRESAR<<<<<<<<<<<<" << endl ;
 cout << "ID: " ;
 cin >> _id;
 cout << "Nombre del Dron: ";
-std::getline(cin,_dron);
+cin>>_dron;
 cout << "Su actividad: " ;
-std::getline(cin,_actividad);
+cin >> _actividad;
 }
 
 void Operaciones::CargarElectricidad(){
@@ -92,9 +93,9 @@ cout << ">>>>>>>>>>>INGRESAR<<<<<<<<<<<<" << endl ;
 cout << "ID: " ;
 cin >> _id;
 cout << "Zona de electricidad: ";
-std::getline(cin,_electricidad);
+cin>> _electricidad;
 cout << "Su actividad: " ;
-std::getline(cin,_actividad);
+cin>> _actividad;
 }
 
 void Operaciones::MostrarVehiculos(){

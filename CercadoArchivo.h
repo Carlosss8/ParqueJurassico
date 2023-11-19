@@ -14,6 +14,8 @@ public:
     int ContarRegistros();
     Cercados Leer(int nroRegistro);
     int Buscar(int IDCercados);
+    int BuscarPorTipoEspecie(std::string TipoEspecie);
+    int BuscarPorNumeroDeCercado(int NumeroCercado);
 };
 
 #endif // CERCADOARCHIVO_H

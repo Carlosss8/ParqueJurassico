@@ -59,7 +59,7 @@ int MundoJurassicoArchivo::Buscar(int IDMundoJurassico){
   int i = 0;
   MundoJurassico reg;
   while(fread(&reg, sizeof(MundoJurassico), 1, p)){
-    if(reg.getID() == IDMundoJurassico){
+    if(reg.getIDInforme() == IDMundoJurassico){
       fclose(p);
       return i;
     }
