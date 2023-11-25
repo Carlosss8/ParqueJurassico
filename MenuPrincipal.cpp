@@ -87,7 +87,7 @@ bool flag4=true;
 int op4;
 do{
 cout << "-------------------------------------" << endl  ;
-cout << " --Elija la opcion que desea consultar--" << endl  ;
+cout << "-Elija la opcion que desea consultar-" << endl  ;
 cout << "           1.Dinosaurios             " << endl  ;
 cout << "           2.Cercados                " << endl  ;
 cout << "           3.Laboratorio             " << endl  ;
@@ -102,8 +102,28 @@ sub.SubMenuConsultas(op4);
 }while (flag4==true);
     break;
 }
-case 4:
+
+case 4:{
+bool flag5=true;
+int op5;
+do{
+cout << "-------------------------------------" << endl  ;
+cout << " --Elija la opcion que desea editar--" << endl  ;
+cout << "           1.Dinosaurios             " << endl  ;
+cout << "           2.Cercados                " << endl  ;
+cout << "           3.Laboratorio             " << endl  ;
+cout << "           4.Informes                " << endl  ;
+cout << "           5.Operaciones             " << endl  ;
+cout << "           0.Volver                  " << endl  ;
+cout << "-------------------------------------" << endl  ;
+cin >> op5;
+system("cls");
+sub.SubMenuEditar(op5);
+
+}while (flag5==true);
     break;
+}
+
 case 5:
     break;
 case 7:

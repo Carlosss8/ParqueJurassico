@@ -22,11 +22,11 @@ DinosauriosArchivo arch("Dinosaurios.dat");
 int op;
 string n;
 int d=arch.ContarRegistros();
-cin >> op;
+//cin >> op;
 //cin >> n;
 //arch.BuscarPorNombre(n);
 //arch.BuscarPorTipo(n);
-arch.BuscarPorNumeroDeCercado(op);
+//arch.BuscarPorNumeroDeCercado(op);
 //for (int x=0;x<d;x++){
     //dino=arch.Leer(x);
     //arch.Buscar(op);

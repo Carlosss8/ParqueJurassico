@@ -92,6 +92,8 @@ cout << "Especie(tipo): " ;
 cin>>_especie;
 cout << "Edad: " ;
 cin >> _edad;
+cout << "ADN: " ;
+cin >> _tipoADN;
 cout << "Fecha de Incubacion: " << endl;
 cout << "Dia: " ;
 cin >> dia;
@@ -113,6 +115,7 @@ cout <<"ID: "<< _id<< endl ;
 cout <<"Nombre: " << _nombre << endl ;
 cout <<"Tipo: "<< _especie << endl ;
 cout <<"Edad: " << _edad << endl ;
+cout <<"ADN: " << _tipoADN << endl ;
 cout <<"Fecha de Incubacion: "<< _fechaIncubacion.toString() << endl ;
 cout << "Numero de cercado en el que habita: " << _numeroCercado << endl;
 }

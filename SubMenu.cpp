@@ -198,34 +198,718 @@ menuPrincipal.Menu();
 
 }
 void SubMenu::SubMenuConsultas(int Op){
+DinosauriosArchivo arch("Dinosaurios.dat");
+CercadoArchivo ArchCercado("Cercados.dat");
+LaboratorioArchivo ArchLabo("Laboratorio.dat");
+OperacionesArchivo ArchOpe("Operaciones.dat");
+MundoJurassicoArchivo ArchInforme("MundoJurassico.dat");
 switch (Op){
 case 1:{
+int op;
+cout << "-------------------------------------------------" << endl  ;
+cout << "---Elija la opcion con la que quiere consultar---" << endl  ;
+cout << "                    1.ID                         " << endl  ;
+cout << "                    2.Nombre                     " << endl  ;
+cout << "                    3.Tipo (Especie)             " << endl  ;
+cout << "                    4.Numero de cercado          " << endl  ;
+cout << "                    5.ADN                        " << endl  ;
+cout << "-------------------------------------------------" << endl  ;
+cin >> op;
 
+switch(op){
+case 1:{
+int ID;
+cout << "Introduzca el ID: " ;
+cin >> ID;
+arch.Buscar(ID);
     break;
 }
 case 2:{
-
+string Nombre;
+cout << "Introduzca el nombre: " ;
+cin >> Nombre;
+arch.BuscarPorNombre(Nombre);
     break;
 }
 case 3:{
-
+string Tipo;
+cout << "Introduzca el nombre: " ;
+cin >> Tipo;
+arch.BuscarPorTipo(Tipo);
     break;
 }
 case 4:{
-
+int NumeroCercado;
+cout << "Introduzca el numero de cercado: " ;
+cin >> NumeroCercado;
+arch.BuscarPorNumeroDeCercado(NumeroCercado);
     break;
 }
 case 5:{
+string ADN;
+cout << "Introduzca el ADN: " ;
+cin >> ADN;
+arch.BuscarPorADN(ADN);
+    break;
+}
+
+}
 
     break;
 }
-case 0:{
 
+//---------------------------
+
+case 2:{
+int op;
+cout << "-------------------------------------------------" << endl  ;
+cout << "---Elija la opcion con la que quiere consultar---" << endl  ;
+cout << "                    1.ID                         " << endl  ;
+cout << "                    2.Tipo (Especie)             " << endl  ;
+cout << "                    3.Numero de cercado          " << endl  ;
+cout << "-------------------------------------------------" << endl  ;
+cin >> op;
+
+switch(op){
+case 1:{
+int ID;
+cout << "Introduzca el ID: " ;
+cin >> ID;
+ArchCercado.Buscar(ID);
+    break;
+}
+case 2:{
+string Tipo;
+cout << "Introduzca el tipo: " ;
+cin >> Tipo;
+ArchCercado.BuscarPorTipoEspecie(Tipo);
+    break;
+}
+case 3:{
+int NumeroCercado;
+cout << "Introduzca el numero de cercado: " ;
+cin >> NumeroCercado;
+ArchCercado.BuscarPorNumeroDeCercado(NumeroCercado);
+    break;
+}
+
+}
+
+    break;
+}
+//--------------------------
+case 3:{
+int op;
+cout << "-------------------------------------------------" << endl  ;
+cout << "---Elija la opcion con la que quiere consultar---" << endl  ;
+cout << "                    1.ID                         " << endl  ;
+cout << "                    2.ADN                        " << endl  ;
+cout << "-------------------------------------------------" << endl  ;
+cin >> op;
+
+switch(op){
+case 1:{
+int ID;
+cout << "Introduzca el ID: " ;
+cin >> ID;
+ArchLabo.Buscar(ID);
+    break;
+}
+case 2:{
+string ADN;
+cout << "Introduzca el ADN: " ;
+cin >> ADN;
+ArchLabo.BuscarPorADN(ADN);
+    break;
+}
+    break;
+}
+
+//-------------------------
+break;
+}
+
+case 4:{
+int ID;
+cout << "Introduzca el ID de la operacion: " ;
+cin >> ID;
+ArchOpe.Buscar(ID);
+    break;
+}
+
+case 5:{
+int ID;
+cout << "Introduzca el ID del informe: " ;
+cin >> ID;
+ArchInforme.Buscar(ID);
     break;
 }
 
 
+
+}
+
+}
+
+void SubMenu::SubMenuEditar(int Op){
+Dinosaurios dino;
+DinosauriosArchivo arch("Dinosaurios.dat");
+switch(Op){
+case 1:{
+int op;
+cout << "-------------------------------------------------" << endl  ;
+cout << "--------Elija la opcion que quiera editar--------" << endl  ;
+cout << "                    1.Edad                       " << endl  ;
+cout << "                    2.ADN                        " << endl  ;
+cout << "                    3.Fecha de incubacion        " << endl  ;
+cout << "                    4.Nombre de cercado          " << endl  ;
+cout << "-------------------------------------------------" << endl  ;
+cin >> op;
+switch(op){
+case 1:{
+
+int ID, Pos;
+cout << "ID: " ;
+cin >> ID ;
+int Cant = arch.ContarRegistros();
+  for(int x=0;x<Cant;x++){
+    dino= arch.Leer(x);
+    if (dino.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Dinosaurios Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int Edit;
+    cout << "Nuevo edad: ";
+    cin >> Edit;
+    Aux.setEdad(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+
+case 2:{
+int ID, Pos;
+cout << "ID: " ;
+cin >> ID ;
+int Cant = arch.ContarRegistros();
+  for(int x=0;x<Cant;x++){
+    dino= arch.Leer(x);
+    if (dino.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Dinosaurios Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    string Edit;
+    cout << "Nuevo ADN: ";
+    cin >> Edit;
+    Aux.setTipoADN(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+
+case 3:{
+int ID, Pos;
+Fecha fecha;
+cout << "ID: " ;
+cin >> ID ;
+int Cant = arch.ContarRegistros();
+  for(int x=0;x<Cant;x++){
+    dino= arch.Leer(x);
+    if (dino.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Dinosaurios Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int dia,mes,anio;
+    cout << "Nueva fecha de incubacion: ";
+    cout << "Dia: " ;
+    cin >> dia;
+    cout << "Mes " ;
+    cin >> mes;
+    cout << "Anio: " ;
+    cin >> anio;
+    fecha.setDia(dia);
+    fecha.setMes(mes);
+    fecha.setAnio(anio);
+    Aux.setFechaIncubacion(fecha);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+
+case 4:{
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+  for(int x=0;x<Cant;x++){
+    dino= arch.Leer(x);
+    if (dino.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Dinosaurios Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int Edit;
+    cout << "Nuevo numero de cercado: ";
+    cin >> Edit;
+    Aux.setNumeroCercado(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+
+}
+//------------------
+    break;
+}
+
+case 2:{
+Cercados cerca;
+CercadoArchivo arch("Cercados.dat");
+int op;
+cout << "-------------------------------------------------" << endl  ;
+cout << "--------Elija la opcion que quiera editar--------" << endl  ;
+cout << "                    1.Especie                    " << endl  ;
+cout << "                    2.Numero de cercado          " << endl  ;
+cout << "                    3.Nombre de cercado          " << endl  ;
+cout << "-------------------------------------------------" << endl  ;
+cin >> op;
+switch (op){
+case 1:{
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    cerca = arch.Leer(x);
+    if (cerca.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Cercados Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    string Edit;
+    cout << "Nueva especie: ";
+    cin >> Edit;
+    Aux.setEspecie(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+
+case 2:{
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    cerca = arch.Leer(x);
+    if (cerca.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Cercados Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int Edit;
+    cout << "Nuevo numero de cercado: ";
+    cin >> Edit;
+    Aux.setNumeroCercado(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+
+case 3:{
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    cerca = arch.Leer(x);
+    if (cerca.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Cercados Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    string Edit;
+    cout << "Nueva especie: ";
+    cin >> Edit;
+    Aux.setNombreCercado(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
 }
 
 }
 
+}
+
+//-----------------
+
+case 3:{
+Laboratorio labo;
+LaboratorioArchivo arch("Laboratorio.dat");
+
+int op;
+cout << "-------------------------------------------------" << endl  ;
+cout << "--------Elija la opcion que quiera editar--------" << endl  ;
+cout << "                    1.ADN                        " << endl  ;
+cout << "                    2.Fecha encontrada           " << endl  ;
+cout << "                    3.Edad                       " << endl  ;
+cout << "-------------------------------------------------" << endl  ;
+cin >> op;
+
+switch(op){
+case 1:{
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    labo = arch.Leer(x);
+    if (labo.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Laboratorio Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    string Edit;
+    cout << "Nueva especie: ";
+    cin >> Edit;
+    Aux.setADN(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+case 2:{
+    Fecha fecha;
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    labo = arch.Leer(x);
+    if (labo.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Laboratorio Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int dia, mes,anio;
+    cout << "Nuevo dia: ";
+    cin >> dia;
+    cout << "Mes: ";
+    cin >> mes;
+    cout << "Anio: ";
+    cin >> anio;
+    fecha.setDia(dia);
+    fecha.setMes(mes);
+    fecha.setAnio(anio);
+
+    Aux.setFechaDeEncuentro(fecha);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+case 3:{
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    labo = arch.Leer(x);
+    if (labo.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Laboratorio Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int Edit;
+    cout << "Nueva especie: ";
+    cin >> Edit;
+    Aux.setEdad(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+}
+
+    break;
+}
+
+case 4:{
+MundoJurassico MJ;
+MundoJurassicoArchivo arch("MundoJurassico.dat");
+
+int op;
+cout << "-------------------------------------------------" << endl  ;
+cout << "--------Elija la opcion que quiera editar--------" << endl  ;
+cout << "                 1.Cantidad de publico           " << endl  ;
+cout << "                 2.Fecha de informe              " << endl  ;
+cout << "                 3.Accidentes                    " << endl  ;
+cout << "-------------------------------------------------" << endl  ;
+cin >> op;
+switch(op){
+case 1:{
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    MJ = arch.Leer(x);
+    if (MJ.getIDInforme() == ID){
+      Pos=x;
+    }
+  }
+
+    MundoJurassico Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int Edit;
+    cout << "Nueva especie: ";
+    cin >> Edit;
+    Aux.setCantDePublico(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+case 2:{
+    Fecha fecha;
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    MJ = arch.Leer(x);
+    if (MJ.getIDInforme() == ID){
+      Pos=x;
+    }
+  }
+
+    MundoJurassico Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int dia, mes, anio;
+    cout << "Nueva fecha de informe: " << endl ;
+    cout << "Dia: " ;
+    cin >> dia;
+    cout << "Mes: " ;
+    cin >> mes;
+    cout << "Anio: " ;
+    cin >> anio;
+    fecha.setDia(dia);
+    fecha.setMes(mes);
+    fecha.setAnio(anio);
+    Aux.setFechaDeInfomre(fecha);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+case 3:{
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    MJ = arch.Leer(x);
+    if (MJ.getIDInforme() == ID){
+      Pos=x;
+    }
+  }
+
+    MundoJurassico Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int Edit;
+    cout << "Nueva especie: ";
+    cin >> Edit;
+    Aux.setAccidentes(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+}
+    break;
+}
+
+case 5:{
+Operaciones Ope;
+OperacionesArchivo arch("MundoJurassico.dat");
+
+int op;
+cout << "-------------------------------------------------" << endl  ;
+cout << "--------Elija la opcion que quiera editar--------" << endl  ;
+cout << "                 1.Observaciones                 " << endl  ;
+cout << "-------------------------------------------------" << endl  ;
+cin >> op;
+
+switch(op){
+case 1:
+    int ID, Pos;
+    cout << "ID: " ;
+    cin >> ID ;
+    int Cant = arch.ContarRegistros();
+    for(int x=0;x<Cant;x++){
+    Ope = arch.Leer(x);
+    if (Ope.getID() == ID){
+      Pos=x;
+    }
+  }
+
+    Operaciones Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    string Edit;
+    cout << "Nueva observacion: ";
+    cin >> Edit;
+    Aux.setActividad(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+    break;
+}
+    break;
+}
+
+}
+
+}
+/*Dinosaurios dino;
+DinosauriosArchivo arch("Dinosaurios.dat");
+int ID, Pos;
+cout << "ID: " ;
+cin >> ID ;
+int Cant = arch.ContarRegistros();
+  for(int x=0;x<Cant;x++){
+    dino= arch.Leer(x);
+    if (dino.getID()== ID){
+      Pos=x;
+    }
+  }
+
+    Dinosaurios Aux = arch.Leer(Pos);
+    cout << "Registro a modificar: " << endl;
+    Aux.Mostrar();
+
+    int Edit;
+    cout << "Nuevo cercado: ";
+    cin >> Edit;
+    Aux.setNumeroCercado(Edit);
+    bool Registro =arch.Guardar(Aux,Pos);
+    if (Registro){
+    cout << endl << "> Registro modificado correctamente." << endl;
+  }
+  else{
+    cout << endl << "> No se encontro el movimiento con ID " << ID << "." << endl;
+  }
+*/

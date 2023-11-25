@@ -74,7 +74,7 @@ int LaboratorioArchivo::Buscar(int IDLaboratorio){
   return -1;
 }
 
-int LaboratorioArchivo::BuscarADN(std::string ADN){
+int LaboratorioArchivo::BuscarPorADN(std::string ADN){
  FILE *p = fopen(_nombreArchivo.c_str(), "rb");
   if (p == nullptr){
     return -1;

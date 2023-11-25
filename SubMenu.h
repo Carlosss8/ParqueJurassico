@@ -9,6 +9,9 @@ public:
     void SubmenuCargar(int Op);
     void SubMenuListar(int Op);
     void SubMenuConsultas(int Op);
+    void SubMenuEditar(int Op);
+
+
 };
 
 #endif // SUBMENU_H

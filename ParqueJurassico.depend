@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1699915541 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\cercadoarchivo.cpp
+1700269823 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\cercadoarchivo.cpp
 	"CercadoArchivo.h"
 	<cstdio>
 
-1698372917 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\cercadoarchivo.h
+1700269823 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\cercadoarchivo.h
 	"Cercados.h"
 	<string>
 
@@ -27,11 +27,11 @@
 1697247696 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\fecha.h
 	<string>
 
-1700262254 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\dinosauriosarchivo.cpp
+1700263811 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\dinosauriosarchivo.cpp
 	"DinosauriosArchivo.h"
 	<cstdio>
 
-1700262254 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\dinosauriosarchivo.h
+1700263811 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\dinosauriosarchivo.h
 	"Dinosaurios.h"
 	<string>
 
@@ -67,18 +67,18 @@
 	"CriarHibrido.h"
 	<iostream>
 
-1698372917 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\laboratorioarchivo.cpp
+1700520005 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\laboratorioarchivo.cpp
 	"LaboratorioArchivo.h"
 	<cstdio>
 
-1698887754 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\laboratorioarchivo.h
+1700520005 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\laboratorioarchivo.h
 	"Laboratorio.h"
 	<string>
 
 1699305513 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\laboratorio.h
 	"Fecha.h"
 
-1700260582 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\main.cpp
+1700521588 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\main.cpp
 	<iostream>
 	"Dinosaurios.h"
 	"CriarHibrido.h"
@@ -90,7 +90,7 @@
 	"DinosauriosArchivo.h"
 	<string>
 
-1700259859 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\menuprincipal.cpp
+1700876836 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\menuprincipal.cpp
 	<iostream>
 	"MenuPrincipal.h"
 	"SubMenu.h"
@@ -123,7 +123,7 @@
 1699305690 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\mundojurassico.h
 	"Fecha.h"
 
-1699918550 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\dinosaurios.cpp
+1700780477 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\dinosaurios.cpp
 	"Dinosaurios.h"
 	<cstring>
 	<string>
@@ -140,7 +140,7 @@
 1699918175 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\operaciones.h
 	<string>
 
-1700259859 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\submenu.cpp
+1700782737 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\submenu.cpp
 	"SubMenu.h"
 	<iostream>
 	"Dinosaurios.h"
@@ -159,7 +159,7 @@
 	"OperacionesArchivo.h"
 	"Fecha.h"
 
-1700178722 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\submenu.h
+1700775524 c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\submenu.h
 	"MenuPrincipal.h"
 
 1699918726 source:c:\users\carlo\onedrive\escritorio\utn facu\laboratorio de computacion ii\proyecto (parque jurasico)\parquejurassico\laboratorio.cpp
